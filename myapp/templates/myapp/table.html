@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+    <button type="submit"  onclick="location.href='/myapp/destination_add/'" > add</button>
+    
+</div>
+
+<div>
+    <h4>destinations
+    </h4>
+
+    <ul>
+
+        {% for des in destination %}
+        <div class="contain">
+            <img src="{{des.image.url}}" alt="Smiley face" width="250" height="250">
+            <div class="centered">{{des.description}}</div>
+            <a href="delete/{{ des.id }}">delete</a>
+            <a href="update/{{ des.id }}">edit</a>
+
+        </div>
+
+        {% endfor %}
+    </ul>
+
+
+
+
+</div>
+
+
+{% endblock %}

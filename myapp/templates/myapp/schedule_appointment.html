@@ -1,0 +1,36 @@
+{% extends "myapp\list.html" %}
+
+{% load static %}
+
+
+{% block content9 %}
+
+<div style="background-color:  #FFFFFF;">
+    <h3 style="        font-family: 'system-ui';
+                                                font-style: normal;
+                                                font-weight: 700;
+                                                font-size: 31px;
+                                                line-height: 38px;
+                                                text-align: center;
+                
+                                                color:  #2D1B1B;">Start your online booking<br />
+        and get scheduled
+        Get know about us </h3>
+    <div>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+
+    </div>
+
+
+
+</div>
+{% endblock %}
+
+
+
+

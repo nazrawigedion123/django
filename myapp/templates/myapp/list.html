@@ -1,0 +1,246 @@
+{% extends "myapp\products.html" %}
+{% block content6 %}
+
+<style>
+    .flex-container2 {
+        display: flex;
+        justify-content: space-evenly;
+        
+        flex-flow: row wrap;
+        
+        /* flex-direction: row-reverse; */
+        
+        min-height: fit-content;
+        resize: vertical;
+        overflow: auto;
+    }
+    .content{
+        flex: 1;
+    }
+    
+
+    .flex-container2>div {
+
+
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+
+
+    }
+
+    .flex-container2>div>p {
+
+        font-family: 'system-ui';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        float: center;
+        justify-content: space-evenly;
+
+        color: #FFFFFF;
+
+
+    }
+    #dot{
+        display: none;
+    }
+    #more{
+        font-family: 'system-ui';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        float: center;
+        display: none;
+
+        color: #FFFFFF;
+
+    }
+    @media (max-width: 800px) {
+    .flex-container2 {
+            flex-direction: column;
+        }
+        }
+    
+
+    .flex-container3 {
+        display: flex;
+        justify-content: space-evenly;
+        
+        flex-flow: row wrap;
+        
+        /* flex-direction: row-reverse; */
+       
+    }
+    .flex-container3>div {
+
+
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+
+
+    }
+     .flex-container3>div>p {
+
+        font-family: 'system-ui';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        float: center;
+        justify-content: space-evenly;
+
+        color: #222121;
+
+
+    }
+     .flex-container3>div>span {
+
+        font-family: 'system-ui';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        float: center;
+        justify-content: space-evenly;
+
+        color: #222121;
+
+
+    }
+     
+
+
+ 
+
+
+
+  
+</style>
+<script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+        var div = document.getElementsByClassName("flex-container2")
+        
+        
+        if (dots.style.display == "none")
+         {
+            dots.style.display = "flex";
+            btnText.innerHTML = "Show more";
+            moreText.style.display = "none";
+            
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Show less";
+            moreText.style.display = "flex";
+            
+           
+        }
+    }
+</script>
+
+<div style="background-color:  #31A5EA; 
+        resize: vertical;
+        overflow: auto; ">
+   
+    <h3 style="        font-family: 'system-ui';
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 31px;
+                                    line-height: 38px;
+                                    text-align: center;
+    
+                                    color: #FFFFFF;">Where do you want to go?<br/>
+                                    checkout our destinations</h3>
+
+    <div class="flex-container2">
+
+
+       
+       
+            {% for des in destination %}
+            <div class="content" >
+                <img src="{{des.image.url}}" alt="Smiley face" width="250" height="250">
+                <p>{{des.description}}</p>
+            </div>
+            {% if forloop.counter == 3 %}
+            
+            <div id="dots"></div><div  id="more">
+           
+            {% endif%}
+            
+            
+            {% endfor %}
+            </div>
+
+        </div>
+        
+        
+        
+
+<div style="text-align: center; ">
+    <button onclick="myFunction()" id="myBtn" style="background-color:  #31A5EA; border: none; background-color: #FFFFFF; color: #31A5EA;">Show more</button>
+
+</div>
+
+</div>
+<div style="background-color:  #FFFFFF;">
+    <h3 style="        font-family: 'system-ui';
+                                                font-style: normal;
+                                                font-weight: 700;
+                                                font-size: 31px;
+                                                line-height: 38px;
+                                                text-align: center;
+                
+                                                color:  #2D1B1B;">Start your online booking<br />
+        and get scheduled
+        Get know about us </h3>
+    
+
+
+
+</div>
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="flex-container3">
+        
+        {% csrf_token %}
+        
+            <div  > {{ form.first_name }}<br />
+            {{ form.last_name }}<br/>
+            {{ form.age }}
+
+            <span > Sex: {{ form.sex }}</span><br />
+            {{ form.email }}</div>
+            <div > {{ form.date }}</div>
+            <div >
+                {{ form.phone_number }}<br/>
+                <p >You will be notified via <b>SMS</b><br/>
+                when we accept your<br/>
+                online <b>booking</b></p>
+                
+                
+                <button type="submit">Save</button>
+            </div>
+    </div>
+      
+        
+           
+</form>
+
+
+
+
+
+
+{% endblock %}

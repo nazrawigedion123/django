@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form action="updaterecord/{{ destinat.id }}" method="post">
+    {% csrf_token %}
+    image:<br>
+    <input type="file" name="image" accept="static/*" required=""  src="{{destinat.image}}">
+    
+    <br><br>
+    description:<br>
+    <input name="description" value="{{ destinat.description}}">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
+
+

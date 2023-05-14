@@ -1,0 +1,185 @@
+
+{% extends "layout.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/true.css' %}">
+<script type="text/javascript" src="{% static 'js/true.js'%}"></script>
+
+<style>
+   
+        
+   
+    .flex-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .flex-container>div {
+
+
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+
+
+    }
+
+    .flex-container>div>b {
+
+        font-family: 'system-ui';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+        color: #FFFFFF;
+
+
+    }
+
+
+
+     .flex-container1 {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #FFFFFF;
+    }
+
+    .flex-container1>div {
+
+
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+
+
+    }
+    .flex-container1>div>b {
+
+        font-family: 'system-ui';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+
+        color: #2D1B1B;
+
+
+
+    }
+    .div2{
+        background-color: #FFFFFF;
+        padding-top: 20px;
+    }
+</style>
+
+<div >
+    <div class="services1">
+        <div>
+        
+            <h3 style="        font-family: 'system-ui';
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 31px;
+                                line-height: 38px;
+                                text-align: center;
+
+                                color: #FFFFFF;">What are our services? <br/>            here are some</h3>
+
+
+        
+        
+
+            
+
+            <div class="flex-container">
+                
+                <div> <img src="{% static 'Vectorcare_and_services.svg' %}" alt="Image 1" />
+                    <br/>
+                <b>Home care services</b></div>
+                <div> <img src="{% static 'rmedical_consultations.svg' %}" alt="Image 1" />
+                    <br/>
+                    <b>Medical Travel</b>
+                </div>
+                <div> <img src="{% static 'travel .png' %}" alt="Image 1" />
+                    <br/>
+                    <b>Travle Guidance</b>
+                </div>
+                <div> <img  src="{% static 'telemedicen.svg' %}" alt="Image 1" />
+                    <br/>
+                    <br/>
+                    <b>Telecommunicate with<br/> forign Doctors</b>
+                </div>
+                <div> <img  src="{% static 'book_remotely.svg' %}" alt="Image 1" />
+                    <br/>
+                    <b>Book Iternery</b>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div  class="div2">
+            <h3 style="        font-family: 'system-ui';
+                                            font-style: normal;
+                                            font-weight: 700;
+                                            font-size: 31px;
+                                            line-height: 38px;
+                                            text-align: center;
+            
+                                            color:  #2D1B1B;">Why you should trust us?<br />
+                                            Get know about us  </h3>
+            
+            
+            
+            
+            
+            
+            
+            <div class="flex-container1">
+            
+                <div> <img src="{% static 'trusted_consultancy.png' %}" alt="Image 1" />
+                    <br />
+                    <b><strong>Trusted Consultancy</strong><br/>Get trusted consultants with<br/>
+                    family follow up</b>
+                </div>
+                <div> <img src="{% static 'fast_response.png' %}" alt="Image 1" />
+                    <br />
+                    <b><strong>Fast Response</strong><br />Fast reply on every medical<br/>
+                    consultancy and travel</b>
+                </div>
+                <div style="padding-top: 20px;"> <img src="{% static 'schedule_booking.png' %}" alt="Image 1" />
+                    <br />
+                    <b><strong>Schedule Booking</strong><br />You can schedule here<br/>
+                    on our website</b>
+                </div>
+                <div> <img src="{% static 'secured_and_protected.png' %}" alt="Image 1" />
+                    <br />
+                    <b><strong>Secured and Protected</strong><br />Your data and every file is well<br/>
+                    protected in our secured DB</b>
+                </div>
+                
+            
+            
+            
+            </div>
+
+
+
+
+
+            
+        </div>
+            
+            
+        
+
+    </div>
+    
+
+</div>
+{% endblock %}
+
+
